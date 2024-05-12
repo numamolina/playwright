@@ -18,7 +18,7 @@ public class App {
             System.out.println(page.title());
             assertThat(page).hasTitle(
                     Pattern.compile("Playwright"));
-            //mvn exec:java -e -D exec.mainClass=com.microsoft.playwright.CLI -D exe.args="codegen http://playwright.dev"
+            //mvn exec:java -e -D exec.mainClass=com.microsoft.playwright.CLI -D exec.args="codegen http://playwright.dev"
         }
     }
 }
