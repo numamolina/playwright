@@ -13,11 +13,40 @@
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
+    <profiles>
+        <profile>
+            <id>Inspector</id>
+            <properties>
+                <exec.mainClass>com.microsoft.playwright.CLI</exec.mainClass>
+                <exec.args>codegen http://playwright.dev</exec.args>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>LoginClockify</id>
+            <properties>
+                <exec.mainClass>com.microsoft.playwright.CLI</exec.mainClass>
+                <exec.args>codegen https://clockify.me/es/</exec.args>
+            </properties>
+        </profile>
+
+
+
+
+    </profiles>
+
     <dependencies>
         <dependency>
             <groupId>com.microsoft.playwright</groupId>
             <artifactId>playwright</artifactId>
             <version>1.33.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>annotations</artifactId>
+            <version>RELEASE</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
     <build>
@@ -28,13 +57,12 @@
                 <version>3.10.1</version>
                 <!-- References to interface static methods are allowed only at source level 1.8 or above -->
                 <configuration>
-                    <source>15</source>
-                    <target>15</target>
+                    <source>17</source>
+                    <target>17</target>
                 </configuration>
             </plugin>
         </plugins>
     </build>
-
 
 
 </project>

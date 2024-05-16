@@ -1,5 +1,3 @@
-package org.example;
-
 import com.microsoft.playwright.*;
 
 import java.util.regex.Pattern;
@@ -14,10 +12,10 @@ public class App {
             Browser browser = pw.chromium().launch(new
                     BrowserType.LaunchOptions().setHeadless(false).setSlowMo(50));
             Page page = browser.newPage();
-            page.navigate("http://playwright.dev");
+            page.navigate("http://clockify.me/es");
             System.out.println(page.title());
             assertThat(page).hasTitle(
-                    Pattern.compile("Playwright"));
+                    Pattern.compile("Clockify"));
             //mvn exec:java -e -D exec.mainClass=com.microsoft.playwright.CLI -D exec.args="codegen http://playwright.dev"
         }
     }
